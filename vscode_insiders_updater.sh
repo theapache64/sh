@@ -10,7 +10,7 @@ if ! [ -x "$(command -v jq)" ]; then
   sudo apt install jq
 fi
 
-API_RESP=$(curl -s "https://vscode-update.azurewebsites.net/api/update/linux-deb-x64/insider/latest") &&
+API_RESP=$(curl -s "https://update.code.visualstudio.com/api/update/linux-deb-x64/insider/latest") &&
 
 LATEST_VERSION=$(echo $API_RESP | jq -r '.version') &&
 LATEST_VERSION_NAME=$(echo $API_RESP | jq -r '.productVersion') &&
